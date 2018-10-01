@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { ListComponent } from './list/list.component';
+import { FormsModule } from '@angular/forms';
 const rooter: Routes = [
   {
     path: 'create',
@@ -24,10 +25,12 @@ const rooter: Routes = [
     AppComponent,
     CreateComponent,
     EditComponent,
-    ListComponent
+    ListComponent,
+    
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(rooter)
+    BrowserModule, RouterModule.forRoot(rooter),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

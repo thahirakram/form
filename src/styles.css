@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+.filetype-input {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}
+
+.filetype-input input[type="file"] {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

@@ -1,13 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-5 mx-auto mt-3">
-    <form>
+    <form name ="createform" #form="ngForm" (ngSubmit)="onSubmit(form)">
       <div class="form-group row">
         <div class="col-3 mt-1">
         <label for="Image">Img</label>
         </div>
-        <div class="col-9">
+        <div class="filetype-input col-9">
         <input type="file" class="form-control" id="Image" placeholder="Image" name="Image">
+        <input type="text">
       </div>
       </div>
       <div class="form-group row">
@@ -34,9 +35,16 @@
         <input type="text" class="form-control" id="price" placeholder="price" name="Price">
       </div>
       </div>
-
+      <button class="btn btn-primary" type="submit">submit</button>
       
     </form>
   </div>
   </div>
 </div>
+<script>
+$(document).ready(function (){
+  $('.filetype-input input[type="file"]').change(function(c){
+    $(this).sibilings('input[type="text"]').val(c.target.files[0].name);
+  });
+});
+</script>
